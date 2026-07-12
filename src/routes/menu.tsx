@@ -61,7 +61,7 @@ const firstCategoryId = menuGroups[0].categoryIds[0];
 const firstCategoryItems = menuData.find((c) => c.id === firstCategoryId)?.items ?? [];
 const preloadImages = firstCategoryItems.slice(0, 6).map((item) => `/menu/800/${imageSlug(item.tr)}.webp`);
 
-const SITE_URL = "https://sultangrill.lovable.app";
+const SITE_URL = "https://sultangrillhouse.com";
 
 type FeaturedLocalized = {
   category: string;

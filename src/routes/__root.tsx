@@ -46,8 +46,8 @@ export const Route = createRootRoute({
       { name: "description", content: "Sultan Grill House — halal Turkish grill on Yerebatan Cd, 2 min from Hagia Sophia. Charcoal kebabs & mixed grills, open until 02:00." },
       { property: "og:description", content: "Sultan Grill House — halal Turkish grill on Yerebatan Cd, 2 min from Hagia Sophia. Charcoal kebabs & mixed grills, open until 02:00." },
       { name: "twitter:description", content: "Sultan Grill House — halal Turkish grill on Yerebatan Cd, 2 min from Hagia Sophia. Charcoal kebabs & mixed grills, open until 02:00." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/58735e39-a63f-427d-bd2c-17f03dec36ec/id-preview-ee51227a--6fae9da6-c712-4135-9dcc-efaefeca7ab2.lovable.app-1776549695924.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/58735e39-a63f-427d-bd2c-17f03dec36ec/id-preview-ee51227a--6fae9da6-c712-4135-9dcc-efaefeca7ab2.lovable.app-1776549695924.png" },
+      { property: "og:image", content: "https://sultangrillhouse.com/assets/img/hero.jpg" },
+      { name: "twitter:image", content: "https://sultangrillhouse.com/assets/img/hero.jpg" },
     ],
     scripts: [
       // Google Analytics 4 (gtag.js) — G-R5692FDPHQ
