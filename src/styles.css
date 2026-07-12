@@ -1,0 +1,230 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Sultan Grill House — Ottoman Luxury Design System
+ * Deep burgundy + antique gold + ivory + charcoal.
+ * All colors in oklch. Use semantic tokens, never raw hex in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Brand-specific tokens */
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-deep: var(--burgundy-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ivory: var(--ivory);
+  --color-charcoal: var(--charcoal);
+  --color-emerald-deep: var(--emerald-deep);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lato", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette — Beige + Koyu Kahverengi (dark brown) + Orange ONLY */
+  --ivory: oklch(0.94 0.028 80);          /* beige (light surface) */
+  --ivory-soft: oklch(0.90 0.032 78);     /* beige, slightly deeper */
+  --charcoal: oklch(0.24 0.05 45);        /* koyu kahverengi (dark brown) */
+  --burgundy: oklch(0.62 0.18 45);        /* orange (primary CTA) */
+  --burgundy-deep: oklch(0.52 0.17 42);   /* deeper orange (hover) */
+  --gold: oklch(0.68 0.16 50);            /* warm orange accent */
+  --gold-soft: oklch(0.80 0.10 60);       /* soft beige-orange */
+  --emerald-deep: oklch(0.32 0.06 45);    /* dark brown (replaces emerald) */
+
+  /* Semantic mapping — light mode is the canonical brand surface */
+  --background: var(--ivory);
+  --foreground: var(--charcoal);
+  --card: oklch(0.99 0.01 85);
+  --card-foreground: var(--charcoal);
+  --popover: oklch(0.99 0.01 85);
+  --popover-foreground: var(--charcoal);
+  --primary: var(--burgundy);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--gold);
+  --secondary-foreground: var(--charcoal);
+  --muted: oklch(0.92 0.02 84);
+  --muted-foreground: oklch(0.42 0.025 50);
+  --accent: var(--gold-soft);
+  --accent-foreground: var(--charcoal);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: var(--ivory);
+  --border: oklch(0.86 0.025 80);
+  --input: oklch(0.88 0.025 80);
+  --ring: var(--gold);
+
+  --chart-1: var(--burgundy);
+  --chart-2: var(--gold);
+  --chart-3: var(--emerald-deep);
+  --chart-4: var(--burgundy-deep);
+  --chart-5: var(--charcoal);
+
+  --sidebar: var(--ivory);
+  --sidebar-foreground: var(--charcoal);
+  --sidebar-primary: var(--burgundy);
+  --sidebar-primary-foreground: var(--ivory);
+  --sidebar-accent: var(--gold-soft);
+  --sidebar-accent-foreground: var(--charcoal);
+  --sidebar-border: oklch(0.86 0.025 80);
+  --sidebar-ring: var(--gold);
+
+  /* Gradients & shadows */
+  --gradient-hero: linear-gradient(
+    180deg,
+    oklch(0.18 0.012 40 / 0.55) 0%,
+    oklch(0.18 0.012 40 / 0.7) 60%,
+    oklch(0.18 0.012 40 / 0.92) 100%
+  );
+  --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
+  --gradient-burgundy: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-deep) 100%);
+
+  --shadow-elegant: 0 20px 60px -20px oklch(0.18 0.012 40 / 0.35);
+  --shadow-gold: 0 8px 30px -10px oklch(0.74 0.118 78 / 0.45);
+  --shadow-soft: 0 4px 20px -8px oklch(0.18 0.012 40 / 0.18);
+
+  --transition-smooth: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark {
+  --background: var(--charcoal);
+  --foreground: var(--ivory);
+  --card: oklch(0.22 0.015 40);
+  --card-foreground: var(--ivory);
+  --popover: oklch(0.22 0.015 40);
+  --popover-foreground: var(--ivory);
+  --primary: var(--gold);
+  --primary-foreground: var(--charcoal);
+  --secondary: var(--burgundy);
+  --secondary-foreground: var(--ivory);
+  --muted: oklch(0.26 0.018 40);
+  --muted-foreground: oklch(0.72 0.02 80);
+  --accent: var(--burgundy-deep);
+  --accent-foreground: var(--ivory);
+  --border: oklch(0.32 0.02 40);
+  --input: oklch(0.32 0.02 40);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Decorative gold divider with center ornament */
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--gold);
+  }
+  .gold-divider::before,
+  .gold-divider::after {
+    content: "";
+    flex: 1;
+    max-width: 6rem;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--gold) 50%,
+      transparent
+    );
+  }
+}
+
+@layer components {
+  .input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--input);
+    background: var(--card);
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .input:focus {
+    border-color: var(--gold);
+  }
+  .input::placeholder {
+    color: var(--muted-foreground);
+  }
+}
