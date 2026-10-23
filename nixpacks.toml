@@ -1,0 +1,5 @@
+# Node 22.23.4 (21 Eki 2026 guvenlik surumu). nixpacks 1.41'in kendi nixpkgs arsivi Node 22.14'te
+# kaliyor, bu yuzden Node'u nixos-26.05 dalinin bu kimliginden aliyoruz. Yeni Node yamasinda
+# kimligi nixos-26.05 dalinin guncel ucuyla degistir.
+[phases.setup]
+nixpkgsArchive = 'da6dc0e7b26060f2f71ce3ef7088fb56ee44fa36'
